@@ -1,0 +1,22 @@
+the version of this program has 5 stages
+1. i2c connection
+2. TCS34725 (Color Sensor)
+3. SHT11 (temperature and humidity sensor) 
+4. CCS811 (CO2 and Volatile Organic Compounds detection)
+5. Data logger
+
+version 1
+1. beable to initialize all the sensors, be stable and data logging
+
+Version 2
+1. each position of blink is telling the user about communacation status 																				...... status:: need to be checked
+	1.1 if all I2C communication are available notify user by blinking internal LED in --- but if all is not available blink in ...						...... status:: need to be checked
+	1.2 if any 12C communication not available blink in . 																								...... status:: need to be checked
+3. if CCS811 Co2 and TVOC show 400,0 then output that the C02 and/or TVOC is lower than detectable offset												...... status OK
+4. as you can see that when we disconnecct the smartwound sensor, and then we reconnect. only sht31 available. we need to make every sensors			...... status:: need to checked
+in smartwound sensor available when we reconnect
+5. auto integration time may not work.. we will use manual callibrate instead 																			...... status OK
+
+Version 2 patch 1
+6. re-initialize the sensors when it reconnect to the device																							...... status OK
+7. calculate the mean value of 50 sampling and use this value to represent the 																			...... status OK
