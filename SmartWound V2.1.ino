@@ -38,7 +38,6 @@ void InitializeTCS()
 void InitializeSHT()
 { Serial.println("TEMP-HUMID sensor SHT31 status:: ");
   sensorStatus = sht31.begin(0x44);
-  Serial.println("COLOR sensor TCS34725 status:: ");
   if (sensorStatus) {   // Set to 0x45 for alternate i2c addr
     Serial.println("Found sensor");
   } else {
