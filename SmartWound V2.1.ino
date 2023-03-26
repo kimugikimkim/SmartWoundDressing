@@ -85,7 +85,7 @@ void setup(void) {
   Serial.begin(9600);
   while (!Serial)
     delay(10);
-  pinMode(LED_BUILTIN, OUTPUT); //used to display all sensor status:: TCS34725,SHT31,CCS811,sd card
+  pinMode(LED_BUILTIN, OUTPUT); //used to display all sensor status:: TCS34725,SHT31,CCS811
   digitalWrite(LED_BUILTIN, LOW);
 
   InitializeTCS();
